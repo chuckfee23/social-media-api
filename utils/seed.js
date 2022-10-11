@@ -13,9 +13,6 @@ connection.once("open", async () => {
   const users = getRandomUsers(10);
   const thoughts = getRandomThoughts(20);
 
-  console.log(users);
-  console.log(thoughts);
-
   await Users.collection.insertMany(users);
   await Thoughts.collection.insertMany(thoughts);
 
