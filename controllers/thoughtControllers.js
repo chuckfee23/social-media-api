@@ -7,7 +7,7 @@ module.exports = {
       const allThoughts = await Thoughts.find();
       return res.json(allThoughts);
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   // GET a single thought
@@ -23,7 +23,7 @@ module.exports = {
       }
       return res.json(singleThought);
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   //   POST a new Thought
@@ -43,7 +43,7 @@ module.exports = {
       }
       return res.json({ message: "New thought created!", newThought });
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   //   PUT to update thought
@@ -61,7 +61,7 @@ module.exports = {
       }
       return res.json(thoughtToUpdate);
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   //   DELETE thought
@@ -87,7 +87,7 @@ module.exports = {
       }
       return res.json({ message: "Thought deleted successfully." });
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   //   Add a Reaction
@@ -105,7 +105,7 @@ module.exports = {
       }
       return res.json(newReaction);
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   // DELETE a reaction
@@ -123,7 +123,7 @@ module.exports = {
       }
       return res.json(reactionToRemove);
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
 };

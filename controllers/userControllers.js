@@ -7,7 +7,7 @@ module.exports = {
       const allUsers = await Users.find();
       return res.json(allUsers);
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   // GET a single user
@@ -21,7 +21,7 @@ module.exports = {
       }
       return res.json(singleUser);
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   //   POST a new user
@@ -30,7 +30,7 @@ module.exports = {
       const newUser = await Users.create(req.body);
       res.json(newUser);
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   //   PUT to update user by id
@@ -48,7 +48,7 @@ module.exports = {
       }
       return res.json(userToUpdate);
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   //   DELETE user by id
@@ -64,7 +64,7 @@ module.exports = {
       }
       return res.json({ message: "User deleted successfully." });
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   //   Add a Friend
@@ -97,7 +97,7 @@ module.exports = {
         friend1,
       });
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
   // DELETE a friend
@@ -130,7 +130,7 @@ module.exports = {
         friend1,
       });
     } catch (err) {
-      res.status(500), json(err);
+      res.status(500).json(err);
     }
   },
 };
