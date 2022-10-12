@@ -20,7 +20,7 @@ const reactionSchema = new Schema(
 );
 
 function dateFormat(date) {
-  return date.toDateString();
+  return date.toLocaleString();
 }
 
 module.exports = reactionSchema;

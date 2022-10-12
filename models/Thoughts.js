@@ -6,7 +6,7 @@ const thoughtSchema = new Schema(
     thoughtText: { type: String, required: true, minLength: 1, maxLength: 280 },
     createdAt: { type: Date, default: Date.now, get: dateFormat },
     username: { type: String, required: true },
-    reations: [Reactions],
+    reactions: [Reactions],
   },
   {
     toJSON: {
@@ -17,7 +17,10 @@ const thoughtSchema = new Schema(
 );
 
 function dateFormat(date) {
-  return date.toDateString();
+  const timeStamp = date.toLocaleString();
+  console.log(timeStamp);
+  return timeStamp;
+  // return date.getTime();
 }
 
 thoughtSchema.virtual("reactionCount").get(function () {

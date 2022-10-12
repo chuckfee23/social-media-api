@@ -5,9 +5,11 @@ module.exports = {
   async getAllThoughts(req, res) {
     try {
       const allThoughts = await Thoughts.find();
+      // console.log(allThoughts);
       return res.json(allThoughts);
     } catch (err) {
       res.status(500).json(err);
+      console.log(err);
     }
   },
   // GET a single thought
@@ -49,7 +51,7 @@ module.exports = {
   //   PUT to update thought
   async updateThought(req, res) {
     try {
-      const thoughtToUpdate = await Users.findOneAndUpdate(
+      const thoughtToUpdate = await Thoughts.findOneAndUpdate(
         { _id: req.params.thoughtId },
         { $set: req.body },
         { runValidators: true, new: true }
