@@ -77,7 +77,7 @@ module.exports = {
           .status(404)
           .json({ message: "Cannot find a thought with this ID." });
       }
-      const thoughtUser = await Users.findByIdAndUpdate(
+      const thoughtUser = await Users.findOneAndUpdate(
         { thoughts: req.params.thoughtId },
         { $pull: { thoughts: req.params.thoughtId } },
         { new: true }
